@@ -1,25 +1,25 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const PhotoCapturePage = () => {
+const PhotoCaptureInfo = () => {
   const navigate = useNavigate();
-  
+
   const handleBackClick = () => {
     navigate('/consent');
     console.log('Going back to consent page');
   };
 
   const handleTakeSelfieClick = () => {
-    console.log('Opening camera for selfie');
-    // navigate('/camera'); // We'll add this later
+    console.log('Button clicked, about to navigate...');
+    window.location.href = '/camera/permission';
   };
 
   const handleUploadPhotosClick = () => {
     console.log('Opening photo upload');
-    // navigate('/upload'); // We'll add this later
   };
 
   return (
+    // ... rest of your JSX stays the same
     <div className="min-h-screen bg-[#F2F3F7] p-4">
       <div className="max-w-sm mx-auto">
         
@@ -108,11 +108,11 @@ const PhotoCapturePage = () => {
           
           {/* Take Selfie Button */}
           <button 
-            onClick={handleTakeSelfieClick}
-            className="w-full bg-[#6969FF] text-white font-semibold py-4 px-6 rounded-2xl text-lg transition-all duration-200 hover:bg-[#6969FF]/90 active:scale-95 mb-4"
-          >
-            Take a selfie
-          </button>
+  onClick={handleTakeSelfieClick}
+  className="w-full bg-[#6969FF] text-white font-semibold py-4 px-6 rounded-2xl text-lg transition-all duration-200 hover:bg-[#6969FF]/90 active:scale-95 mb-4"
+>
+  Take a selfie
+</button>
           
           {/* Upload Photos Button */}
           <button 
@@ -132,4 +132,4 @@ const PhotoCapturePage = () => {
   );
 };
 
-export default PhotoCapturePage;
+export default PhotoCaptureInfo; 
