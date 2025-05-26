@@ -1,11 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+  
   const handleAnalyzeClick = () => {
-    // This will navigate to next step (consent/questions flow)
-    console.log('Starting skin analysis...');
+    navigate('/consent');
   };
-
+    
   return (
     <div className="min-h-screen bg-[#F2F3F7] p-2">
       <div className="max-w-sm mx-auto">
