@@ -55,9 +55,9 @@ const LandingPage = () => {
         {/* Main Content Section */}
             <div className="bg-white rounded-3xl p-6 shadow-sm border-2 border-[#DCDCDC]">
               {/* Main Headline */}
-          <div className="mb-4">
+          <div className="mb-6">
             <h2 className="text-4xl font-black leading-none mb-3" style={{letterSpacing: '-0.03em', lineHeight: '1.1'}}>
-              The Best AI{' '}
+              The best AI{' '}
               <br />
               Skincare{' '}
               <br />
@@ -67,9 +67,13 @@ const LandingPage = () => {
               </span>
             </h2>
           </div>
-          
+            {/* Top Divider */}
+          <div className="mb-2">
+            <div className="w-full h-px bg-[#EBEBEB]"></div>
+          </div>
+
           {/* Features */}
-<div className="mb-8 px-6 overflow-hidden">
+<div className="mb-4 px-6 overflow-hidden">
   <div
     className="flex animate-scroll"
     style={{
@@ -93,7 +97,10 @@ const LandingPage = () => {
     ))}
   </div>
 </div>
-
+ {/* Bottom Divider */}
+          <div className="mb-6">
+            <div className="w-full h-px bg-[#EBEBEB]"></div>
+          </div>
 <style jsx>{`
   @keyframes scroll {
     0% {
@@ -110,11 +117,17 @@ const LandingPage = () => {
 `}</style>
           
           {/* Social Proof */}
-          <div className="mb-8">
-            <h3 className="text-2xl font-black text-gray-900" style={{letterSpacing: '-0.01em'}}>
-              Trusted by <span className="text-2xl font-black">1K+</span> <span className="font-normal">users</span>
-            </h3>
-          </div>
+<div className="mb-8">
+  <div className="flex items-center" style={{letterSpacing: '-0.01em'}}>
+    <span className="text-2xl font-black text-gray-900 mr-1"style={{ letterSpacing: '-0.04em' }} >Trusted by</span>
+    <img 
+      src="/assets/images/trusted-users.png" 
+      alt="1K+ users" 
+      className="h-8 object-contain"
+    />
+    {/*<span className="text-2xl font-normal text-gray-900 ml-2">users</span>*/}
+  </div>
+</div>
           
           {/* CTA Button */}
           <button 
