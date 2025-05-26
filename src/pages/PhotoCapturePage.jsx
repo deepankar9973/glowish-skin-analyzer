@@ -1,18 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const ConsentPage = () => {
+const PhotoCapturePage = () => {
   const navigate = useNavigate();
-  const [isAccepted, setIsAccepted] = useState(false);
-
+  
   const handleBackClick = () => {
-    navigate('/');
-    console.log('Going back to landing page');
+    navigate('/consent');
+    console.log('Going back to consent page');
   };
 
-  const handleConsentClick = () => {
-    navigate('/photo-capture');  // ← This is the only change
-    console.log('User consented, moving to photo capture page');
+  const handleTakeSelfieClick = () => {
+    console.log('Opening camera for selfie');
+    // navigate('/camera'); // We'll add this later
+  };
+
+  const handleUploadPhotosClick = () => {
+    console.log('Opening photo upload');
+    // navigate('/upload'); // We'll add this later
   };
 
   return (
@@ -23,9 +27,9 @@ const ConsentPage = () => {
         <div className="relative mb-4">
           <div className="rounded-3xl overflow-hidden">
             <img 
-              src="/assets/images/consent-hero.jpg" 
-              alt="Privacy and Skincare" 
-              className="w-full h-64 object-cover"
+              src="/assets/images/photo-capture-hero.jpg" 
+              alt="Face Analysis Guide" 
+              className="w-full h-80 object-cover object-center"
             />
             
             {/* Back Navigation - Inside Image */}
@@ -48,10 +52,9 @@ const ConsentPage = () => {
         <div className="bg-white rounded-3xl p-6 shadow-sm border-2 border-[#E6E6E6]">
           
           {/* Main Headline */}
-          <div className="mb-4">
-            <h1 className="text-4xl font-black leading-none mb-3" style={{letterSpacing: '-0.04em', lineHeight: '1.2'}}>
-              We care about<br />
-              your privacy
+          <div className="mb-6">
+            <h1 className="text-4xl font-black leading-none mb-3" style={{letterSpacing: '-0.03em', lineHeight: '1.1'}}>
+              Take a selfie
             </h1>
           </div>
           
@@ -61,9 +64,9 @@ const ConsentPage = () => {
           </div>
           
           {/* Subtitle */}
-          <div className="mb-4 px10">
+          <div className="mb-2 px-0">
             <p className="text-[#6969FF] font-regular text-m" style={{ letterSpacing: '-0.02em' }}>
-              Please review & accept the terms below:
+              Please follow the following guidelines: 
             </p>
           </div>
           
@@ -72,42 +75,51 @@ const ConsentPage = () => {
             <div className="w-full h-px bg-[#EBEBEB]"></div>
           </div>
           
-          {/* Privacy Points */}
+          {/* Guidelines */}
           <div className="mb-8">
-            <p className="text-gray-800 text-regular font-bold mb-4 leading-relaxed" style={{ letterSpacing: '-0.05em' }}>
-              To give you smart, personalized skincare advice, we use a quick selfie-based scan. But here's the deal:
+            <p className="text-gray-800 text-regular font-bold mb-4 leading-relaxed"style={{ letterSpacing: '-0.05em' }}>
+              We needs to access your camera to provide a personalized experience:
             </p>
-            
-                        <ul className="space-y-2 text-gray-700 text-regular leading-relaxed" style={{ letterSpacing: '-0.04em' }}>
+            <ul className="space-y-2 text-gray-700 text-regular leading-relaxed" style={{ letterSpacing: '-0.04em' }}>
               <li className="flex items-start">
                 <span className="text-gray-600 mr-3 flex-shrink-0 mt-0.5 text-xl">•</span>
-                <span>We do NOT store your selfie — it's deleted right after analysis.</span>
+                <span>Remove your glasses: Works best without makeup.</span>
               </li>
               
               <li className="flex items-start">
                 <span className="text-gray-600 mr-3 flex-shrink-0 mt-0.5 text-xl">•</span>
-                <span>Your personal info (like name, email) is processed only to personalize your experience.</span>
+                <span>Pull your hair back.</span>
               </li>
               
               <li className="flex items-start">
                 <span className="text-gray-600 mr-3 flex-shrink-0 mt-0.5 text-xl">•</span>
-                <span>Used strictly for analysis, never for ads.</span>
+                <span>Face the camera and keep your expression neutral.</span>
               </li>
               
               <li className="flex items-start">
                 <span className="text-gray-600 mr-3 flex-shrink-0 mt-0.5 text-xl">•</span>
-                <span>You must be 18+ to proceed.</span>
+                <span>Stay in a well-lighted environment: preferably with natural light.</span>
               </li>
             </ul>
           </div>
 
+
           
-          {/* Consent Button */}
+          
+          {/* Take Selfie Button */}
           <button 
-            onClick={handleConsentClick}
-            className="w-full bg-[#6969FF] text-white font-semibold py-5 px-6 rounded-2xl text-xl transition-all duration-200 hover:bg-[#6969FF]/90 active:scale-95"
+            onClick={handleTakeSelfieClick}
+            className="w-full bg-[#6969FF] text-white font-semibold py-4 px-6 rounded-2xl text-lg transition-all duration-200 hover:bg-[#6969FF]/90 active:scale-95 mb-4"
           >
-            I consent
+            Take a selfie
+          </button>
+          
+          {/* Upload Photos Button */}
+          <button 
+            onClick={handleUploadPhotosClick}
+            className="w-full bg-transparent text-[#6969FF] font-semibold py-4 px-6 rounded-2xl text-lg transition-all duration-200 hover:bg-[#6969FF]/10 active:scale-95 border-0"
+          >
+            Upload photos
           </button>
           
         </div>
@@ -120,4 +132,4 @@ const ConsentPage = () => {
   );
 };
 
-export default ConsentPage;
+export default PhotoCapturePage;
