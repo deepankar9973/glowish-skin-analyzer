@@ -10,7 +10,7 @@ const LandingPage = () => {
     <div className="min-h-screen bg-[#F2F3F7] p-2">
       <div className="max-w-sm mx-auto">
         {/* Hero Card with Face Analysis */}
-        <div className="relative mb-6">
+        <div className="relative mb-4">
           <div className="bg-black rounded-3xl overflow-hidden relative h-96">
             {/* Background Image - Your face image will go here */}
             <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/60"></div>
@@ -136,6 +136,13 @@ const LandingPage = () => {
           >
             Analyze your skin
           </button>
+
+          {/* Sweet Message Below Button */}
+<div className="mt-4 text-center">
+  <p className="text-[#858585] text-sm font-light" style={{ letterSpacing: '-0.04em' }}>
+    (With all my love — Ishika Garg)
+  </p>
+</div>
         </div>
 
         {/* Bottom spacing for mobile */}
